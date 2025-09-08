@@ -1,0 +1,16 @@
+{
+  "name": "s3-abort-uploads",
+  "version": "1.0.0",
+  "description": "CLI tool to abort S3/R2 multipart uploads",
+  "type": "module",
+  "scripts": {
+    "start": "bun run s3-abort-uploads.ts"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "bun": "^1.0.0"
+  }
+}
