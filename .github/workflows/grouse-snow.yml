@@ -1,0 +1,26 @@
+name: Grouse Snow Checker
+
+on:
+  schedule:
+    - cron: "0 16 * * *" # 08:00 PST (16:00 UTC). Use 15 for 08:00 PDT.
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r snow/requirements.txt
+      - name: Run Grouse Snow Checker
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
+          TWILIO_TO_NUMBER: ${{ secrets.TWILIO_TO_NUMBER }}
+        run: python snow/grouse_snow_checker.py
