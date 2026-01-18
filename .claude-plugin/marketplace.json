@@ -10,14 +10,14 @@
       "name": "linkedin-stats",
       "description": "Extract and display LinkedIn post statistics including impressions, reactions, comments, and reposts. Connects to Arc browser via CDP to read recent activity.",
       "category": "productivity",
-      "source": "./skills/linkedin-stats",
+      "source": "../.claude/skills/linkedin-stats",
       "homepage": "https://github.com/jovezhong/sak"
     },
     {
       "name": "agent-browser",
       "description": "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, test web applications, or extract information from web pages.",
       "category": "development",
-      "source": "./skills/agent-browser",
+      "source": "../.claude/skills/agent-browser",
       "homepage": "https://github.com/jovezhong/sak"
     }
   ]
