@@ -7,7 +7,12 @@ description: Extract and display LinkedIn post statistics including impressions,
 
 Extracts statistics from LinkedIn recent activity page and displays them in a table format.
 
-**IMPORTANT**: When running this skill, only display the table output from the script. Do NOT add any summary, analysis, or commentary about the results. Just show the raw table.
+**IMPORTANT**:
+- This skill uses a bash shell script (`linkedin_stats.sh`), not a TypeScript file
+- When running this skill, only display the markdown table output from the script
+- Do NOT add any summary, analysis, or commentary about the results
+- The output MUST be a properly formatted markdown table with adequate cell padding
+- Simply run: `./linkedin_stats.sh <username>` (or just `./linkedin_stats.sh` for default)
 
 ## Usage
 
@@ -44,23 +49,33 @@ Or use the default (configured for Jove Zhong):
 
 ## Example Output
 
+The output is a properly formatted markdown table with adequate cell padding:
+
 ```
-| # | Date | Content | Impressions | Reactions | Comments | Reposts |
-|---|------|---------|-------------|-----------|----------|---------|
-| 1 | 2026-01-16 | Langfuse joins ClickHouse! You can check out  | 4,932 | 54 | 7 | 1 |
-| 2 | 2026-01-16 | hit 50k followers on LinkedIn, and were runni | 416 | 5 | 0 | 0 |
+| # | Date       | Content                                      | Impressions | Reactions | Comments | Reposts |
+|---|------------|----------------------------------------------|-------------|-----------|----------|---------|
+| 1 | 2026-01-17 | Some of my recent posts about #Claude...     | 2,018       | 27        | 3        | 0       |
+| 2 | 2026-01-16 | Langfuse joins ClickHouse! "You can check... | 6,534       | 58        | 7        | 1       |
+| 3 | 2026-01-16 | 🎉 Cresta hit 50k followers on LinkedIn...   | 482         | 5         | 0        | 0       |
+| 4 | 1w ago     | You probably saw the recent drama: Claud...  | 42,319      | 35        | 11       | 1       |
 ```
+
+**Important**: Only display the table portion, not the progress messages or completion status.
 
 ## Technical Details
 
+- **Implementation**: Bash shell script (`linkedin_stats.sh`) that orchestrates the extraction
+- **Extraction**: Python script (`scripts/extract_linkedin_posts.py`) processes the snapshot
+- **Output format**: Markdown table with properly padded cells for visual alignment
 - Uses text-based extraction (not screenshots) to minimize token usage
 - Date handling:
   - Exact dates for recent posts: "9 hours ago" → 2026-01-17, "1 day ago" → 2026-01-16
   - Relative format for older posts: "1 week ago" → "1w ago", "2 months ago" → "2mo ago"
   - This approach avoids incorrect date assumptions for posts older than a week
-- Handles LinkedIn's lazy loading by scrolling through the page
-- Extracts data from accessibility tree snapshot
+- Handles LinkedIn's lazy loading by scrolling through the page multiple times
+- Extracts data from accessibility tree snapshot (agent-browser snapshot -c)
 - Captures reaction counts (likes/emoji reactions) in addition to comments and reposts
+- Content field is left-justified with padding to ensure table alignment
 
 ## Notes
 
