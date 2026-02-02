@@ -1,0 +1,32 @@
+# User Dictionary for Personal Transcription Corrections
+# Format:
+#   - Single word: case-insensitive match (e.g., "GitHub")
+#   - Arrow format: exact replacement (e.g., "Nodejs -> Node.js")
+
+# Company/Product Names (case corrections only)
+Groundcover
+SharePoint
+WeWork
+Python
+RAG
+Splunk
+CODEOWNERS
+Langfuse
+NotebookLM
+FDE
+Claude
+
+# ASR/Transcription error corrections
+Joe -> Jove
+data pattern -> design pattern
+iPhone call -> their phone call
+Stropic -> Anthropic
+SFD -> SFT
+crowd certificates -> cloud certificates
+touchy BT -> ChatGPT
+chat GBT -> ChatGPT
+CaaS -> CCaaS
+
+# Abbreviation expansions
+btw -> by the way
+ppl -> people

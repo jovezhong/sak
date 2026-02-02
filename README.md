@@ -21,6 +21,7 @@ claude plugin marketplace add jovezhong/sak
 # Install skills
 /plugin install linkedin-stats
 /plugin install agent-browser
+/plugin install edit-podcast
 ```
 
 **Available Skills:**
@@ -49,6 +50,35 @@ Comprehensive browser automation toolkit for web testing, form filling, screensh
 - Save/load browser state for authentication
 
 **Location:** `skills/`
+
+#### edit-podcast
+Clean and improve podcast transcriptions by removing filler words, fixing grammar errors, and applying ASR corrections. Supports both automated cleaning and manual reasoning-based review workflows.
+
+**Key Features:**
+- Automated filler word removal (uh, um, you know, I mean)
+- Grammar and ASR error corrections via dictionary system
+- Two-tier dictionary: common (shared) + user (personal corrections)
+- Supports both TXT and SRT subtitle formats
+- In-place editing with git-based workflow
+- Manual reasoning mode for contextual error detection
+
+**Usage:**
+```bash
+# Automated cleaning
+/edit-podcast --input transcript.txt --output transcript.txt
+
+# With aggressive mode (removes more filler words)
+/edit-podcast --input transcript.txt --output transcript.txt --aggressive
+
+# Process SRT files
+/edit-podcast --input subtitles.srt --output subtitles.srt
+```
+
+**Requirements:**
+- Bun.js runtime
+- Dictionary files in `dictionaries/` (common.txt and user.txt)
+
+**Location:** `skills/edit-podcast/`
 
 For detailed usage, see the skill documentation in each skill's directory.
 

@@ -19,6 +19,13 @@
       "category": "development",
       "source": "../.claude/skills/agent-browser",
       "homepage": "https://github.com/jovezhong/sak"
+    },
+    {
+      "name": "edit-podcast",
+      "description": "Clean and improve podcast transcriptions by removing filler words, fixing grammar errors, and applying ASR corrections. Supports both automated cleaning and manual reasoning-based review workflows for TXT and SRT subtitle formats.",
+      "category": "productivity",
+      "source": "../.claude/skills/edit-podcast",
+      "homepage": "https://github.com/jovezhong/sak"
     }
   ]
 }

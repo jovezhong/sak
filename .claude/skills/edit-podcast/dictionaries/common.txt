@@ -1,0 +1,30 @@
+# Common Dictionary for Podcast Transcription Corrections
+# Format:
+#   - Single word: case-insensitive match to correct casing (e.g., "GitHub")
+#   - Arrow format: exact replacement (e.g., "Nodejs -> Node.js")
+# Lines starting with # are comments
+
+# Company/Product Names (case corrections)
+GitHub
+LinkedIn
+ChatGPT
+Cresta
+API
+YouTube
+Google
+OpenAI
+Anthropic
+
+# Technical Terms (case corrections)
+JavaScript
+TypeScript
+DevOps
+
+# Technical Terms (format changes)
+Nodejs -> Node.js
+APIs -> APIs
+
+# Common Transcription Errors
+gonna -> going to
+wanna -> want to
+gotta -> got to
