@@ -1,8 +1,8 @@
 name: Grouse Snow Checker
 
 on:
-  schedule:
-    - cron: "0 16 * * *" # 08:00 PST (16:00 UTC). Use 15 for 08:00 PDT.
+  # schedule:
+  #   - cron: "0 16 * * *" # 08:00 PST (16:00 UTC). Use 15 for 08:00 PDT.
   workflow_dispatch:
 
 jobs:
